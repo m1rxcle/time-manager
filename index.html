@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+		<meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+		<link rel="stylesheet" href="./src/styles/style.css" />
+		<script src="./dist/renderer.js" defer></script>
+		<title>Time Manager</title>
+	</head>
+	<body>
+		<main>
+			<header>
+				<div class="title-container">
+					<img id="title-logo" src="./src/public/svg/work-icon.svg" alt="logo" />
+					<h1 id="title"><span class="focus">Focus</span> Flow</h1>
+				</div>
+				<div class="icons-container">
+					<img src="./src/public/svg/settings.svg" alt="logo" />
+					<img src="./src/public/svg/volume-1.svg" alt="logo" />
+				</div>
+			</header>
+
+			<div id="timer-container">
+				<svg id="timer-ring" viewBox="0 0 200 200" aria-hidden="true">
+					<circle class="timer-ring-track" cx="100" cy="100" r="90" />
+					<circle
+						id="timer-ring-progress"
+						class="timer-ring-progress"
+						cx="100"
+						cy="100"
+						r="90"
+						pathLength="100"
+						transform="scale(1, -1) translate(0, -200)"
+					/>
+				</svg>
+
+				<div id="remaining-timer-circle">
+					<span id="status">Ready</span>
+					<p id="timer">01:00:00</p>
+				</div>
+			</div>
+
+			<div class="modes-container">
+				<div class="mode-buttons-container">
+					<button id="work" class="mode">
+						<img src="./src/public/svg/work-icon.svg" alt="logo" />
+						<span>Work</span>
+					</button>
+					<button id="chill" class="mode">
+						<img src="./src/public/svg/chill-icon.svg" alt="logo" />
+						<span>Chill</span>
+					</button>
+				</div>
+
+				<div class="buttons-container">
+					<button id="start">Старт</button>
+					<button id="stop">Стоп</button>
+					<button id="reset">Сбросить</button>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
